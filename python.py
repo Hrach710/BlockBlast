@@ -127,25 +127,25 @@ SSSS = Piece([[1, 0, 0],
 # и т.д.
 
 LOOT_TABLE = [
-    {"name": I,     "probability": 0.55, "gold_value": 5},
-    {"name": II,    "probability": 0.05, "gold_value": 100},
-    {"name": O,     "probability": 0.25, "gold_value": 20},
-    {"name": T,     "probability": 0.15, "gold_value": 60},
-    {"name": TT,    "probability": 0.15, "gold_value": 60},
-    {"name": TTT,   "probability": 0.15, "gold_value": 60},
-    {"name": TTTT,  "probability": 0.15, "gold_value": 60},
-    {"name": J,     "probability": 0.05, "gold_value": 200},
-    {"name": JJ,    "probability": 0.05, "gold_value": 200},
-    {"name": JJJ,   "probability": 0.05, "gold_value": 200},
-    {"name": JJJJ,  "probability": 0.05, "gold_value": 200},
-    {"name": L,     "probability": 0.05, "gold_value": 200},
-    {"name": LL,    "probability": 0.05, "gold_value": 200},
-    {"name": LLL,   "probability": 0.05, "gold_value": 200},
-    {"name": LLLL,  "probability": 0.05, "gold_value": 200},
-    {"name": S,     "probability": 0.05, "gold_value": 100},
-    {"name": SS,    "probability": 0.05, "gold_value": 100},
-    {"name": SSS,   "probability": 0.05, "gold_value": 100},
-    {"name": SSSS,  "probability": 0.05, "gold_value": 100},
+    {"name": I,     "probability": 0.55, "score_deal": 200},
+    {"name": II,    "probability": 0.05, "score_deal": 200},
+    {"name": O,     "probability": 0.25, "score_deal": 200},
+    {"name": T,     "probability": 0.15, "score_deal": 200},
+    {"name": TT,    "probability": 0.15, "score_deal": 200},
+    {"name": TTT,   "probability": 0.15, "score_deal": 200},
+    {"name": TTTT,  "probability": 0.15, "score_deal": 200},
+    {"name": J,     "probability": 0.05, "score_deal": 200},
+    {"name": JJ,    "probability": 0.05, "score_deal": 200},
+    {"name": JJJ,   "probability": 0.05, "score_deal": 200},
+    {"name": JJJJ,  "probability": 0.05, "score_deal": 200},
+    {"name": L,     "probability": 0.05, "score_deal": 200},
+    {"name": LL,    "probability": 0.05, "score_deal": 200},
+    {"name": LLL,   "probability": 0.05, "score_deal": 200},
+    {"name": LLLL,  "probability": 0.05, "score_deal": 200},
+    {"name": S,     "probability": 0.05, "score_deal": 200},
+    {"name": SS,    "probability": 0.05, "score_deal": 200},
+    {"name": SSS,   "probability": 0.05, "score_deal": 200},
+    {"name": SSSS,  "probability": 0.05, "score_deal": 200},
 ]
 
 total = sum(item["probability"] for item in LOOT_TABLE)
@@ -185,7 +185,7 @@ def run_simulation(loot_table, num_trials=10_000):
     for _ in range(num_trials):
         item = single_loot_drop(loot_table)
         results.append(item["name"])
-        gold_earned.append(item["gold_value"])
+        gold_earned.append(item["score_deal"])
         pass
 
     return results, gold_earned
